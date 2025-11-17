@@ -56,3 +56,31 @@ Quantization is performed as part of training where fake quants are introduced t
 
 **Reference:** https://newsletter.maartengrootendorst.com/p/a-visual-guide-to-quantization
 
+## Compute optimal LLM training
+
+### Chinchilla paper
+
+Training Compute-Optimal Large Language Models: https://arxiv.org/pdf/2203.15556
+
+Parameters impacting performance of the LLM:
+* **Dataset size**: Number of tokens
+* **Model size**: Number of paramaters.
+
+Constraint in increasing dataset size and model size is the **compute cost** associated with training the LLM.
+
+**Key finding**: In order to achieve compute-optimal training, the model size and the number of training tokens should be scaled equally: 
+for every doubling of model size the number of training tokens should also be doubled.
+
+Chinchilla model is substantially smaller model (70 Billion parameters), trained using 1.4 Trillion tokens. 
+In contrast, GPT-3 uses 175 billion parameters and 300 Billion tokens.
+
+### Case study: BloombergGPT LLM for FinTech
+
+BloombergGPT is a domain specific finance LLM utilizing scaling laws popularized by Chinchilla. 
+It is a 50 billion parameter language model that is trained ~700B tokens.
+
+Need for domain specific LLMs:
+1. Difference in terminology used by generic text vs domain specific text.
+1.1. **Liquidity** in every day meaning is how easily something flows or moves but in finance it means how quickly an asset can be converted to cash.
+2. Cost efficient and higher accuracy of performing domain specific tasks.
+
