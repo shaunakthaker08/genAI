@@ -25,7 +25,7 @@ algorithms.
 To understand how KL-Divergence works, imagine we have two probability distributions: the distribution of the original LLM, and a new proposed distribution of an RL-updated LLM. KL-Divergence measures the average amount of information gained when we use the original policy to encode samples from the new proposed policy.
 
 
-### Constitutional AI
+## Constitutional AI
 
 Reference: https://www.anthropic.com/news/claudes-constitution
 
